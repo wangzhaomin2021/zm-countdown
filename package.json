@@ -1,7 +1,7 @@
 {
   "name": "zm-countdown",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
     "preview": "vite preview"
   },
   "module": "dist/countdown.es.js",
-  "types": "countdown.d.ts",
+  "types": "src/countdown.d.ts",
   "files": [
     "dist",
     "src/countdown.ts",
