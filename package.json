@@ -1,0 +1,31 @@
+{
+  "name": "zm-countdown",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wangzhaomin2021/zm-countdown.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "tsc src/countdown.ts -d --emitDeclarationOnly",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "module": "dist/countdown.es.js",
+  "types": "countdown.d.ts",
+  "files": [
+    "dist",
+    "src/countdown.ts",
+    "src/countdown.d.ts"
+  ],
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1",
+    "vue": "^3.4.31",
+    "vue-tsc": "^2.0.21"
+  },
+  "keywords": ["countdown", "timer"]
+}
