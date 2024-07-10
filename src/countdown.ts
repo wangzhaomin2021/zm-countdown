@@ -103,8 +103,7 @@ export default class Countdown {
 
     // 结束
     public async end() {
-        this._state = CountdownState.Pennding
-        this.passTime = 0
+        this._state = CountdownState.Finished
         this.stopCounting()
     }
 
