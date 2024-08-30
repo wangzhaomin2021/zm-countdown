@@ -1,4 +1,4 @@
-enum CountdownState {
+export enum CountdownState {
     Pennding,
     Running,
     Paused,
@@ -9,6 +9,12 @@ export interface CountdownOptions {
     countdown: number
     finishedCallback?: () => void
     tick?: () => void
+}
+
+interface CountdownCoreState {
+    countdown: number
+    passTime: number
+    state: CountdownState
 }
 
 export default class Countdown {
@@ -113,5 +119,27 @@ export default class Countdown {
         this.passTime = 0
         this._state = CountdownState.Pennding
         this.stopCounting()
+    }
+
+    // 
+    public setByConfig(countdown: CountdownCoreState) {
+        // 设置时的状态
+        this.stopCounting()
+        // 设置后的状态
+        this.countdown = countdown.countdown
+        this._state = countdown.state
+        this.passTime = countdown.passTime
+        this.countingPoint = Date.now()
+        if (this._state === CountdownState.Running) {
+            this.counting()
+        }
+    }
+
+    get config(): CountdownCoreState {
+        return {
+            countdown: this.countdown,
+            state: this._state,
+            passTime: this.passTime
+        }
     }
 }

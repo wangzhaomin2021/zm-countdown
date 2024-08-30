@@ -1,4 +1,4 @@
-declare enum CountdownState {
+export declare enum CountdownState {
     Pennding = 0,
     Running = 1,
     Paused = 2,
@@ -8,6 +8,11 @@ export interface CountdownOptions {
     countdown: number;
     finishedCallback?: () => void;
     tick?: () => void;
+}
+interface CountdownCoreState {
+    countdown: number;
+    passTime: number;
+    state: CountdownState;
 }
 export default class Countdown {
     private countdown;
@@ -34,5 +39,7 @@ export default class Countdown {
     resume(): Promise<void>;
     end(): Promise<void>;
     reset(countdown?: number): Promise<void>;
+    setByConfig(countdown: CountdownCoreState): void;
+    get config(): CountdownCoreState;
 }
 export {};

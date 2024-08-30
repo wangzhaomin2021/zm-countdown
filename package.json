@@ -1,11 +1,14 @@
 {
   "name": "zm-countdown",
   "private": false,
-  "version": "0.0.3",
+  "version": "1.0.0",
   "type": "module",
   "repository": {
     "type": "git",
     "url": "git@github.com:wangzhaomin2021/zm-countdown.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "dev": "vite",
